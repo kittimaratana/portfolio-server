@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-/*
+
 exports.up = function (knex) {
     return knex.schema.createTable('warehouses', (table) => {
       table.increments('id').primary();
@@ -18,7 +18,7 @@ exports.up = function (knex) {
       table.timestamp('updated_at').defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
     });
   };
-  */
+  
   
   /**
    * @param { import("knex").Knex } knex
