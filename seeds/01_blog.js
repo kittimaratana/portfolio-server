@@ -11,7 +11,7 @@ exports.seed = async function (knex) {
         id: 5,
         date: '2024-07-01',
         article_title: 'Popular Tech Stacks',
-        description: "Most common tech stacks organizations use to build their web and mobile application",
+        description: "Most common tech stacks organizations use to build their web and mobile application.",
         link: 'https://stackshare.io/stacks'
       },
       {
