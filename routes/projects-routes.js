@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const konnectController = require('../controllers/konnect-controller');
+const projectsController = require('../controllers/projects-controller');
 
 //router.route("/").get(inventoriesController.index).post(inventoriesController.add);
 //router.route("/:id").get(inventoriesController.findOne).put(inventoriesController.update).delete(inventoriesController.remove);

@@ -4,9 +4,9 @@
  */
 exports.seed = async function (knex) {
     // Deletes ALL existing entries
-    await knex('blog').del();
+    await knex('articles').del();
     
-    await knex('blog').insert([
+    await knex('articles').insert([
       {
         id: 5,
         date: '2024-07-01',

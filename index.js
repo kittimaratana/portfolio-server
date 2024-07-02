@@ -3,8 +3,8 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5001;
 const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:3000";
-const blogRoutes = require('./routes/blog-routes');
-const konnectRoutes = require('./routes/konnect-routes');
+const articlesRoutes = require('./routes/articles-routes');
+const projectsRoutes = require('./routes/projects-routes');
 
 // Express middleware
 app.use(express.json());
@@ -15,8 +15,8 @@ app.use((req, _res, next) => {
 });
 
 // // Configuring blog and konnect endpoints
-app.use('/api/blog', blogRoutes);
-app.use('/api/konnect', konnectRoutes);
+app.use('/api/articles', articlesRoutes);
+app.use('/api/projects', projectsRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Welcome to Portfolio API');

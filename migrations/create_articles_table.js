@@ -4,12 +4,12 @@
  */
 
 exports.up = function (knex) {
-    return knex.schema.createTable('projects', (table) => {
+    return knex.schema.createTable('articles', (table) => {
       table.increments('id').primary();
-      table.string('project_title').notNullable();
+      table.timestamp('date').notNullable();
+      table.string('article_title').notNullable();
       table.string('description').notNullable();
-      table.string('tech_stack').notNullable();
-      table.string('image').notNullable();
+      table.string('link').notNullable();
       table.timestamp('created_at').defaultTo(knex.fn.now());
     });
   };
@@ -20,6 +20,6 @@ exports.up = function (knex) {
    * @returns { Promise<void> }
    */
   exports.down = function (knex) {
-    return knex.schema.dropTable('projects');
+    return knex.schema.dropTable('articles');
   };
   
