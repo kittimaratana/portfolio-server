@@ -15,8 +15,8 @@ app.use((req, _res, next) => {
 });
 
 // // Configuring blog and konnect endpoints
-app.use('/api/articles', articlesRoutes);
-app.use('/api/projects', projectsRoutes);
+app.use('/articles', articlesRoutes);
+app.use('/projects', projectsRoutes);
 
 app.get('/', (_req, res) => {
     res.send('Welcome to Portfolio API');

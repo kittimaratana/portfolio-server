@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const projectsController = require('../controllers/projects-controller');
+const projectsController = require('../controllers/projects-controller.js');
 
-//router.route("/").get(inventoriesController.index).post(inventoriesController.add);
-//router.route("/:id").get(inventoriesController.findOne).put(inventoriesController.update).delete(inventoriesController.remove);
+router.route("/").get(projectsController.index)
 
 module.exports = router;
