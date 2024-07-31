@@ -10,6 +10,7 @@ exports.up = function (knex) {
       table.string('article_title').notNullable();
       table.string('description').notNullable();
       table.string('link').notNullable();
+      table.string('image').notNullable();
       table.timestamp('created_at').defaultTo(knex.fn.now());
     });
   };
