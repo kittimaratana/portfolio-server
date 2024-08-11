@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 //enable PORT AND cors to define server and client environment variables
 const PORT = process.env.PORT || 5001;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://kittimaratana.netlify.app/";
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://kittimaratana.com";
 
 // Express middleware
 app.use(express.json());
