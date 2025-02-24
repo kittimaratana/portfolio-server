@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5001"
+    env_file: .env
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - PORT=5001
+      - CORS_ORIGIN=http://localhost:3000
+      - DB_LOCAL_USER=root
+      - DB_LOCAL_PASSWORD=cursor123
+      - DB_LOCAL_DBNAME=portfolio
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=cursor123
+      - MYSQL_DATABASE=portfolio
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pcursor123"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+    networks:
+      - app-network
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data: 

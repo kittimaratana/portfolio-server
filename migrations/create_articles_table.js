@@ -6,12 +6,11 @@
 exports.up = function (knex) {
     return knex.schema.createTable('articles', (table) => {
       table.increments('id').primary();
-      table.timestamp('date').notNullable();
+      table.date('date').notNullable();
       table.string('article_title').notNullable();
-      table.string('description').notNullable();
+      table.text('description').notNullable();
       table.string('link').notNullable();
       table.string('image').notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
     });
   };
   
